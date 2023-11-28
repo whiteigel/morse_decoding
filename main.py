@@ -1,16 +1,18 @@
 from morse_dict import *
 
+dict = MORSE_DICT
+
 input_string = input('Enter your string:')
 def decode_morse_code(morse_string, input_list):
     words = input_string.split(' ')
     decoded_message = ''
     for word in words:
-        if word in morse_dict.values():
-            decoded_message += list(morse_dict.keys())[list(morse_dict.values()).index(word)]
+        if word in input_list.values():
+            decoded_message += list(input_list.keys())[list(input_list.values()).index(word)]
         else:
             return "Unsupported symbol in string"
     return decoded_message
-decoded_message = decode_morse_code(input_string, morse_dict)
+decoded_message = decode_morse_code(input_string, dict)
 
 print("Message:", decoded_message)
 
