@@ -8,11 +8,11 @@ def decode_morse_code(morse_string, input_list):
         if word in morse_dict.values():
             decoded_message += list(morse_dict.keys())[list(morse_dict.values()).index(word)]
         else:
-            decoded_message += ' '
+            return "Unsupported symbol in string"
     return decoded_message
 decoded_message = decode_morse_code(input_string, morse_dict)
 
-print("Decoded Message:", decoded_message)
+print("Message:", decoded_message)
 
 
 
